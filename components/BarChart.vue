@@ -24,6 +24,10 @@ const option = ref({
   title: {
     text: 'BarChart',
     left: 'center',
+    textStyle: {
+      color: '#fff',
+      lineHeight: 30,
+    }
   },
   xAxis: {
     type: 'category',
@@ -60,7 +64,7 @@ const option = ref({
 <template>
   <div>
     <client-only>
-      <v-chart class="chart" :option="option" />
+      <v-chart class="chart" :option="option" autoresize />
     </client-only>
   </div>
 </template>

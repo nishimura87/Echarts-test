@@ -31,13 +31,17 @@ const option = ref({
         dashArrayX: [10, 10],
         dashArrayY: [1, 0],
         rotation: 0,
-        color:'black'
+        color: 'black',
       }
     }
   },
   title: {
     text: 'BarChart3',
     left: 'center',
+    textStyle: {
+      color: '#fff',
+      lineHeight: 30,
+    }
   },
   xAxis: {
     type: 'value',
@@ -63,14 +67,13 @@ const option = ref({
       data: [80, 80, 80],
     }
   ],
-
 });
 </script>
 
 <template>
   <div>
     <client-only>
-      <v-chart class="chart" :option="option" />
+      <v-chart class="chart" :option="option" autoresize />
     </client-only>
   </div>
 </template>

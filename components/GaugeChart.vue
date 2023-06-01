@@ -24,28 +24,33 @@ const option = ref({
   title: {
     text: 'GaugeChart',
     left: 'center',
+    textStyle: {
+      color: '#fff',
+      lineHeight:30,
+    }
   },
   series: [
     {
       type: 'gauge',
-      center: ['50%', '60%'],
+      radius: 80,
+      center: ['15%', '50%'],
       startAngle: 200,
       endAngle: 200,
       min: 0,
-      max: 300,
+      max: 200,
       itemStyle: {
         color: 'blue'
       },
       progress: {
         show: true,
-        width: 30,
+        width: 20,
       },
       pointer: {
         show: false
       },
       axisLine: {
         lineStyle: {
-          width: 30,
+          width: 20,
         }
       },
       axisTick: {
@@ -66,29 +71,158 @@ const option = ref({
         show: false
       },
       title: {
-        show: false
+        textStyle: {
+          color: "#fff",
+          fontSize: 12,
+        },
       },
       detail: {
         valueAnimation: true,
         offsetCenter: [0, '-5%'],
-        fontSize: 20,
+        fontSize: 18,
+        color: '#fff',
         fontWeight: 'bolder',
         formatter: '{value} km',
       },
       data: [
         {
-          value: 150
+          value: 93,
+          name: 'SPEED_REAR',
         }
       ],
     },
-  ]
+    {
+      type: 'gauge',
+      radius: 80,
+      center: ['50%', '50%'],
+      startAngle: 200,
+      endAngle: 200,
+      min: 0,
+      max: 200,
+      itemStyle: {
+        color: 'blue'
+      },
+      progress: {
+        show: true,
+        width: 20,
+      },
+      pointer: {
+        show: false
+      },
+      axisLine: {
+        lineStyle: {
+          width: 20,
+        }
+      },
+      axisTick: {
+        lineStyle: {
+          width: 0,
+        }
+      },
+      splitLine: {
+        lineStyle: {
+          width: 0,
+        },
+
+      },
+      axisLabel: {
+        fontSize: 0,
+      },
+      anchor: {
+        show: false
+      },
+      title: {
+        textStyle: {
+          color: "#fff",
+          fontSize: 12,
+        },
+      },
+      detail: {
+        valueAnimation: true,
+        offsetCenter: [0, '-5%'],
+        fontSize: 18,
+        color: '#fff',
+        fontWeight: 'bolder',
+        formatter: '{value} km',
+      },
+      data: [
+        {
+          value: 93,
+          name: 'SPEED_REAR',
+        }
+      ],
+    },
+    {
+      type: 'gauge',
+      radius: 80,
+      center: ['85%', '50%'],
+      startAngle: 200,
+      endAngle: 200,
+      min: 0,
+      max: 200,
+      itemStyle: {
+        color: 'blue'
+      },
+      progress: {
+        show: true,
+        width: 20,
+      },
+      pointer: {
+        show: false
+      },
+      axisLine: {
+        lineStyle: {
+          width: 20,
+        }
+      },
+      axisTick: {
+        lineStyle: {
+          width: 0,
+        }
+      },
+      splitLine: {
+        lineStyle: {
+          width: 0,
+        },
+
+      },
+      axisLabel: {
+        fontSize: 0,
+      },
+      anchor: {
+        show: false
+      },
+      title: {
+        textStyle: {
+          color: "#fff",
+          fontSize: 12,
+        },
+      },
+      detail: {
+        valueAnimation: true,
+        offsetCenter: [0, '-5%'],
+        fontSize: 18,
+        color: '#fff',
+        fontWeight: 'bolder',
+        formatter: '{value} km',
+      },
+      data: [
+        {
+          value: 93,
+          name: 'SPEED_REAR',
+        }
+      ],
+    },
+  ],
+  
 });
+
 </script>
 
 <template>
   <div>
     <client-only>
-      <v-chart class="chart" :option="option" />
+      <v-chart class="chart" :option="option" autoresize />
     </client-only>
   </div>
 </template>

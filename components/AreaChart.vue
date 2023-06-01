@@ -11,6 +11,7 @@ import {
 import VChart, { THEME_KEY } from 'vue-echarts';
 import { ref, defineComponent } from 'vue';
 
+
 use([
   CanvasRenderer,
   LineChart,
@@ -24,6 +25,10 @@ const option = ref({
   title: {
     text: 'AreaChart',
     left: 'center',
+    textStyle: {
+      color: '#fff',
+      lineHeight:30,
+    }
   },
   xAxis: {
     type: 'category',
@@ -54,12 +59,14 @@ const option = ref({
     }
   ],
 });
+
+
 </script>
 
 <template>
   <div>
     <client-only>
-      <v-chart class="chart" :option="option" />
+      <v-chart id="chart" class="chart" :option="option" autoresize />
     </client-only>
   </div>
 </template>
