@@ -31,7 +31,7 @@ const option = ref({
         dashArrayX: [10, 10],
         dashArrayY: [1, 0],
         rotation: 0,
-        color:['#fff','red','#fff']
+        color:'black'
       }
     }
   },
@@ -60,7 +60,7 @@ const option = ref({
   series: [
     {
       type: 'bar',
-      data: [80,80,80],
+      data: [80, 80, 80],
     }
   ],
 
@@ -78,5 +78,6 @@ const option = ref({
 <style>
 .chart {
   height: 300px;
+  width: 100%;
 }
 </style>

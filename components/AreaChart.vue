@@ -52,8 +52,7 @@ const option = ref({
       data: [0, 30, 80, 10, 10, 50, 30, -20, 0, 10],
       areaStyle: {}
     }
-  ]
-
+  ],
 });
 </script>
 
@@ -69,5 +68,6 @@ const option = ref({
 <style>
 .chart {
   height: 300px;
+  width: 100%;
 }
 </style>

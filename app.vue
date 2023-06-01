@@ -15,7 +15,7 @@ import { BarChart } from 'echarts/charts';
     <div class="chart_con">
       <AreaChart />
     </div>
-    <div class="chart_con2">
+    <div class="chart_con">
       <GaugeChart />
     </div>
   </div>
@@ -30,12 +30,6 @@ import { BarChart } from 'echarts/charts';
   flex-wrap:wrap;
 }
 .chart_con {
-  width: 40%;
-  margin: 1%;
-  border: 2px solid blue;
-  border-radius: 10px;
-}
-.chart_con2{
   width: 40%;
   margin: 1%;
   border: 2px solid blue;

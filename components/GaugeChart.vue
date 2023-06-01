@@ -74,7 +74,6 @@ const option = ref({
         fontSize: 20,
         fontWeight: 'bolder',
         formatter: '{value} km',
-        color: '#fff'
       },
       data: [
         {
@@ -97,5 +96,6 @@ const option = ref({
 <style>
 .chart {
   height: 300px;
+  width: 100%;
 }
 </style>
