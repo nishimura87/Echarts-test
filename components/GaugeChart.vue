@@ -32,8 +32,8 @@ const option = ref({
   series: [
     {
       type: 'gauge',
-      radius: 80,
-      center: ['15%', '50%'],
+      radius: '45%',
+      center: ['17%', '50%'],
       startAngle: 200,
       endAngle: 200,
       min: 0,
@@ -93,7 +93,7 @@ const option = ref({
     },
     {
       type: 'gauge',
-      radius: 80,
+      radius: '45%',
       center: ['50%', '50%'],
       startAngle: 200,
       endAngle: 200,
@@ -154,8 +154,8 @@ const option = ref({
     },
     {
       type: 'gauge',
-      radius: 80,
-      center: ['85%', '50%'],
+      radius: '45%',
+      center: ['83%', '50%'],
       startAngle: 200,
       endAngle: 200,
       min: 0,

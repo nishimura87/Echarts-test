@@ -34,5 +34,6 @@ import { BarChart } from 'echarts/charts';
   margin: 1%;
   border: 2px solid blue;
   border-radius: 10px;
+  padding: 10px;
 }
 </style>
