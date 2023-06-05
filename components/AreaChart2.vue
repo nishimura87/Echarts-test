@@ -28,6 +28,8 @@ function getRandomInt(max) {
 const array1 = [];
 const array2 = [];
 const array3 = [];
+const array4 = [];
+const array5 = [];
 const max = 100;
 const length = 200
 for (let i = 0; i < length; i++) {
@@ -38,6 +40,12 @@ for (let i = 0; i < length; i++) {
 }
 for (let i = 0; i < length; i++) {
   array3.push(getRandomInt(max)+ 200);
+}
+for (let i = 0; i < length; i++) {
+  array4.push(getRandomInt(max)+ 300);
+}
+for (let i = 0; i < length; i++) {
+  array5.push(getRandomInt(max)+ 400);
 }
 
 const option = ({
@@ -84,7 +92,7 @@ const option = ({
       symbol: 'none',
       sampling: 'lttb',
       itemStyle: {
-        color: 'rgb(255, 70, 131)'
+        color: 'red'
       },
       data: array1,
     },
@@ -94,7 +102,7 @@ const option = ({
       symbol: 'none',
       sampling: 'lttb',
       itemStyle: {
-        color: 'rgb(100, 30, 131)'
+        color: 'green'
       },
       data: array2,
     },
@@ -104,9 +112,29 @@ const option = ({
       symbol: 'none',
       sampling: 'lttb',
       itemStyle: {
-        color: 'rgb(100, 230, 201)'
+        color: 'pink'
       },
       data: array3,
+    },
+    {
+      name: 'Fake Data3',
+      type: 'line',
+      symbol: 'none',
+      sampling: 'lttb',
+      itemStyle: {
+        color: 'yellow'
+      },
+      data: array4,
+    },
+    {
+      name: 'Fake Data3',
+      type: 'line',
+      symbol: 'none',
+      sampling: 'lttb',
+      itemStyle: {
+        color: 'blue'
+      },
+      data: array5,
     }
   ],
 });
