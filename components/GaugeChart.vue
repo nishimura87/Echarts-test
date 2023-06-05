@@ -9,7 +9,6 @@ import {
   LegendComponent,
 } from 'echarts/components';
 import VChart, { THEME_KEY } from 'vue-echarts';
-import { ref, defineComponent } from 'vue';
 
 use([
   CanvasRenderer,
@@ -20,7 +19,7 @@ use([
   LabelLayout
 ]);
 
-const option = ref({
+const option = ({
   title: {
     text: 'GaugeChart',
     left: 'center',
@@ -62,7 +61,7 @@ const option = ref({
         lineStyle: {
           width: 0,
         },
-        
+
       },
       axisLabel: {
         fontSize: 0,
@@ -214,7 +213,7 @@ const option = ref({
       ],
     },
   ],
-  
+
 });
 
 </script>

@@ -9,7 +9,6 @@ import {
   LegendComponent,
 } from 'echarts/components';
 import VChart, { THEME_KEY } from 'vue-echarts';
-import { ref, defineComponent } from 'vue';
 
 
 use([
@@ -21,7 +20,7 @@ use([
   LabelLayout
 ]);
 
-const option = ref({
+const option = ({
   title: {
     text: 'AreaChart',
     left: 'center',

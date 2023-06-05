@@ -16,6 +16,9 @@ import { BarChart } from 'echarts/charts';
       <AreaChart />
     </div>
     <div class="chart_con">
+      <AreaChart2 />
+    </div>
+    <div class="chart_con">
       <GaugeChart />
     </div>
   </div>

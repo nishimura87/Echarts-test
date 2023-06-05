@@ -1,6 +1,9 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-    build: {
-        transpile: [/echarts/],
-    }
+  typescript: {
+    strict: true
+  },
+  build: {
+    transpile: [/echarts/],
+  },
 })
