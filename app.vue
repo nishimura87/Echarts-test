@@ -24,6 +24,12 @@ import { BarChart } from 'echarts/charts';
       <div class="chart_con2">
         <LineChart />
       </div>
+      <div class="chart_con2">
+        <ScatterChart />
+      </div>
+      <div class="chart_con2">
+        <SmoothLineChart />
+      </div>
     </div>
   </div>
 
