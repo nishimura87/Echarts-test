@@ -3,31 +3,38 @@ import { BarChart } from 'echarts/charts';
 
 <template>
   <div class="main">
-    <div class="chart_con">
-      <BarChart />
+    <div class="main_con">
+      <div class="chart_con">
+        <BarChart />
+      </div>
+      <div class="chart_con">
+        <BarChart2 />
+      </div>
+      <div class="chart_con">
+        <BarChart3 />
+      </div>
+      <div class="chart_con">
+        <AreaChart />
+      </div>
+      <div class="chart_con">
+        <GaugeChart />
+      </div>
     </div>
-    <div class="chart_con">
-      <BarChart2 />
-    </div>
-    <div class="chart_con">
-      <BarChart3 />
-    </div>
-    <div class="chart_con">
-      <AreaChart />
-    </div>
-    <div class="chart_con">
-      <AreaChart2 />
-    </div>
-    <div class="chart_con">
-      <GaugeChart />
+    <div class="main_con">
+      <div class="chart_con2">
+        <LineChart />
+      </div>
     </div>
   </div>
+
 </template>
 
 <style>
 .main {
   background-color: black;
   padding: 10px;
+}
+.main_con {
   display: flex;
   justify-content: center;
   flex-wrap:wrap;
@@ -37,6 +44,11 @@ import { BarChart } from 'echarts/charts';
   margin: 1%;
   border: 2px solid blue;
   border-radius: 10px;
-  padding: 10px;
+}
+.chart_con2 {
+  width: 100%;
+  margin: 1%;
+  border: 2px solid blue;
+  border-radius: 10px;
 }
 </style>

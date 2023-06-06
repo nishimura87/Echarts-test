@@ -8,7 +8,8 @@ import {
   TooltipComponent,
   LegendComponent,
 } from 'echarts/components';
-import VChart, { THEME_KEY } from 'vue-echarts';
+import VChart from 'vue-echarts';
+import { ref } from "vue";
 
 use([
   CanvasRenderer,
@@ -19,7 +20,10 @@ use([
   LabelLayout
 ]);
 
-const option = ({
+const sampleData = [70, 70, 70, 70, 60, 60, 70, -20, -20, -20, 70, 50, 50, 50, 50, 70, 70, 70, 50, 70];
+
+
+const option = ref({
   title: {
     text: 'BarChart',
     left: 'center',
@@ -60,11 +64,7 @@ const option = ({
   series: [
     {
       type: 'bar',
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)'
-      },
-      data: [70, 70, 70, 70, 60, 60, 70, -20, -20, -20, 70, 50, 50, 50, 50, 70,
-        70, 70, 50, 70],
+      data:sampleData,
     }
   ]
 

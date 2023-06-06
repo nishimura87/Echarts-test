@@ -1,10 +1,16 @@
-import { use } from 'echarts/core';
+import { use } from "echarts/core";
 
-import { CanvasRenderer } from 'echarts/renderers';
-import { BarChart } from 'echarts/charts';
-import { LineChart } from 'echarts/charts';
-import { GridComponent, TooltipComponent } from 'echarts/components';
+import { CanvasRenderer } from "echarts/renderers";
+import { BarChart, LineChart, PieChart } from "echarts/charts";
+import { GridComponent, TooltipComponent } from "echarts/components";
 
 export default defineNuxtPlugin(() => {
-    use([CanvasRenderer, BarChart, LineChart, GridComponent, TooltipComponent]);
+  use([
+    CanvasRenderer,
+    BarChart,
+    LineChart,
+    PieChart,
+    GridComponent,
+    TooltipComponent,
+  ]);
 });

@@ -8,9 +8,10 @@ import {
   AriaComponent,
   TooltipComponent,
   LegendComponent,
+  DataZoomComponent
 } from 'echarts/components';
-import VChart, { THEME_KEY } from 'vue-echarts';
-
+import VChart from 'vue-echarts';
+import { ref } from "vue";
 use([
   CanvasRenderer,
   BarChart,
@@ -18,10 +19,18 @@ use([
   TitleComponent,
   TooltipComponent,
   LegendComponent,
+  DataZoomComponent,
   LabelLayout
 ]);
 
-const option = ({
+const data1 = 80;
+const data2 = 80;
+const data3 = 80;
+const data4 = 100 - data1;
+const data5 = 100 - data2;
+const data6 = 100 - data3;
+
+const option = ref({
   aria: {
     enabled: true,
     decal: {
@@ -63,8 +72,33 @@ const option = ({
   series: [
     {
       type: 'bar',
-      data: [80, 80, 80],
-    }
+      stack: 'Ad',
+      data: [
+      {
+          value: data1,
+          itemStyle: {
+            color: 'blue'
+          }
+        },
+        {
+          value: data2,
+          itemStyle: {
+            color: 'red'
+          }
+        },
+        {
+          value: data3,
+          itemStyle: {
+            color: 'blue'
+          }
+        },],
+    },
+    {
+      type: 'bar',
+      stack: 'Ad',
+      data: [data4,data5,data6],
+      color:['#fff']
+    },
   ],
 });
 </script>
