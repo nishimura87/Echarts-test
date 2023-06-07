@@ -32,6 +32,7 @@ const array2: number[] = [];
 const array3: number[] = [];
 const array4: number[] = [];
 const array5: number[] = [];
+const sample5: number[] = [];
 const max = 100;
 const length = 200;
 for (let i = 0; i < length; i++) {
@@ -48,6 +49,9 @@ for (let i = 0; i < length; i++) {
 }
 for (let i = 0; i < length; i++) {
   array5.push(getRandomInt(max));
+}
+for (let i = 0; i < length; i++) {
+  sample5.push(getRandomInt(max));
 }
 
 const option = ref({
@@ -84,8 +88,18 @@ const option = ref({
       splitLine: { show: false },
       gridIndex: 0,
       axisPointer: {
-            z: 100
-          }
+        snap: true,
+        lineStyle: {
+          color: 'red',
+          width: 2
+        },
+        handle: {
+          show: true,
+          color: '#7581BD',
+          size: 30,
+          margin: 30,
+        }
+      }
     },
     {
       type: 'category',
@@ -94,6 +108,20 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 1,
+      axisPointer: {
+        snap: true,
+        lineStyle: {
+          color: 'red',
+          width: 2
+        },
+        label: {
+          show: false,
+        },
+        handle: {
+          show: true,
+          color: 'transparent'
+        }
+      },
     },
     {
       type: 'category',
@@ -102,6 +130,20 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 2,
+      axisPointer: {
+        snap: true,
+        lineStyle: {
+          color: 'red',
+          width: 2
+        },
+        label: {
+          show: false,
+        },
+        handle: {
+          show: true,
+          color: 'transparent'
+        }
+      },
     },
     {
       type: 'category',
@@ -110,6 +152,20 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 3,
+      axisPointer: {
+        snap: true,
+        lineStyle: {
+          color: 'red',
+          width: 2
+        },
+        label: {
+          show: false,
+        },
+        handle: {
+          show: true,
+          color: 'transparent'
+        }
+      },
     },
     {
       type: 'category',
@@ -118,6 +174,42 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 4,
+      axisPointer: {
+        snap: true,
+        lineStyle: {
+          color: 'red',
+          width: 2
+        },
+        label: {
+          show: false,
+        },
+        handle: {
+          show: true,
+          color: 'transparent'
+        }
+      },
+    },
+    {
+      type: 'category',
+      boundaryGap: false,
+      axisLabel: { show: false },
+      axisTick: { show: false },
+      splitLine: { show: false },
+      gridIndex: 5,
+      axisPointer: {
+        snap: true,
+        lineStyle: {
+          color: 'red',
+          width: 2
+        },
+        label: {
+          show: false,
+        },
+        handle: {
+          show: true,
+          color: 'transparent'
+        }
+      },
     },
   ],
   yAxis: [
@@ -165,14 +257,31 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 4
+    },
+    {
+      type: 'value',
+      data: array1,
+      axisLine: { show: false },
+      axisLabel: { show: false },
+      axisTick: { show: false },
+      splitLine: { show: false },
+      gridIndex: 5
     }
   ],
   dataZoom: [
     {
+      type: 'inside',
       start: 0,
       end: 100,
-      heigh: 20,
-      xAxisIndex: [0, 1, 2, 3, 4],
+      height: 30,
+      xAxisIndex: [0,1,2,3,4,5]
+    },
+    {
+      type: 'slider',
+      start: 0,
+      end: 100,
+      height: 30,
+      xAxisIndex: [0,1,2,3,4,5]
     }
   ],
   grid: [
@@ -196,6 +305,12 @@ const option = ref({
     },
     {
     bottom: '61%',
+    left: 10,
+    right: 10,
+    height: '15%'
+    },
+    {
+    bottom: '77%',
     left: 10,
     right: 10,
     height: '15%'
@@ -260,11 +375,23 @@ const option = ref({
       symbol: 'none',
       sampling: 'lttb',
       itemStyle: {
-        color: 'blue'
+        color: 'rgba(0, 0, 255, 1)'
       },
       data: array5,
       xAxisIndex: 4,
       yAxisIndex: 4
+    },
+    {
+      name: 'Fake Data5',
+      type: 'line',
+      symbol: 'none',
+      sampling: 'lttb',
+      itemStyle: {
+        color: 'rgba(114, 114, 114, 0.7)'
+      },
+      data: sample5,
+      xAxisIndex: 5,
+      yAxisIndex: 5
     }
   ],
 });

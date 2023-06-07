@@ -25,6 +25,9 @@ import { BarChart } from 'echarts/charts';
         <LineChart />
       </div>
       <div class="chart_con2">
+        <LineChart2 />
+      </div>
+      <div class="chart_con2">
         <ScatterChart />
       </div>
       <div class="chart_con2">
