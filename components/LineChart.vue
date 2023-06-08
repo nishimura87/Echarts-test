@@ -11,6 +11,7 @@ import {
 } from 'echarts/components';
 import VChart from 'vue-echarts';
 import { ref } from "vue";
+import 'echarts/lib/component/markLine';
 
 use([
   CanvasRenderer,
@@ -54,6 +55,8 @@ for (let i = 0; i < length; i++) {
   sample5.push(getRandomInt(max));
 }
 
+const sessionTime = 100;
+
 const option = ref({
   title: {
     text: 'LineChart',
@@ -87,19 +90,6 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 0,
-      axisPointer: {
-        snap: true,
-        lineStyle: {
-          color: 'red',
-          width: 2
-        },
-        handle: {
-          show: true,
-          color: '#7581BD',
-          size: 30,
-          margin: 30,
-        }
-      }
     },
     {
       type: 'category',
@@ -108,20 +98,6 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 1,
-      axisPointer: {
-        snap: true,
-        lineStyle: {
-          color: 'red',
-          width: 2
-        },
-        label: {
-          show: false,
-        },
-        handle: {
-          show: true,
-          color: 'transparent'
-        }
-      },
     },
     {
       type: 'category',
@@ -130,20 +106,6 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 2,
-      axisPointer: {
-        snap: true,
-        lineStyle: {
-          color: 'red',
-          width: 2
-        },
-        label: {
-          show: false,
-        },
-        handle: {
-          show: true,
-          color: 'transparent'
-        }
-      },
     },
     {
       type: 'category',
@@ -152,20 +114,6 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 3,
-      axisPointer: {
-        snap: true,
-        lineStyle: {
-          color: 'red',
-          width: 2
-        },
-        label: {
-          show: false,
-        },
-        handle: {
-          show: true,
-          color: 'transparent'
-        }
-      },
     },
     {
       type: 'category',
@@ -174,20 +122,6 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 4,
-      axisPointer: {
-        snap: true,
-        lineStyle: {
-          color: 'red',
-          width: 2
-        },
-        label: {
-          show: false,
-        },
-        handle: {
-          show: true,
-          color: 'transparent'
-        }
-      },
     },
     {
       type: 'category',
@@ -196,20 +130,6 @@ const option = ref({
       axisTick: { show: false },
       splitLine: { show: false },
       gridIndex: 5,
-      axisPointer: {
-        snap: true,
-        lineStyle: {
-          color: 'red',
-          width: 2
-        },
-        label: {
-          show: false,
-        },
-        handle: {
-          show: true,
-          color: 'transparent'
-        }
-      },
     },
   ],
   yAxis: [
@@ -332,6 +252,19 @@ const option = ref({
         color: 'red'
       },
       data: array1,
+      markLine: {
+        animation: false,
+        symbol: 'none',
+        label: {
+          show: false
+        },
+        lineStyle: {
+          type: 'dashed',
+          color: 'red',
+          width: '3'
+        },
+        data: [{ xAxis: sessionTime }]
+      }
     },
     {
       name: 'Fake Data2',
@@ -343,7 +276,20 @@ const option = ref({
       },
       data: array2,
       xAxisIndex: 1,
-      yAxisIndex: 1
+      yAxisIndex: 1,
+      markLine: {
+        animation: false,
+        symbol: 'none',
+        label: {
+          show: false
+        },
+        lineStyle: {
+          type: 'dashed',
+          color: 'red',
+          width: '3'
+        },
+        data: [{ xAxis: sessionTime }]
+      }
     },
     {
       name: 'Fake Data3',
@@ -355,7 +301,20 @@ const option = ref({
       },
       data: array3,
       xAxisIndex: 2,
-      yAxisIndex: 2
+      yAxisIndex: 2,
+      markLine: {
+        animation: false,
+        symbol: 'none',
+        label: {
+          show: false
+        },
+        lineStyle: {
+          type: 'dashed',
+          color: 'red',
+          width: '3'
+        },
+        data: [{ xAxis: sessionTime }]
+      }
     },
     {
       name: 'Fake Data4',
@@ -367,7 +326,20 @@ const option = ref({
       },
       data: array4,
       xAxisIndex: 3,
-      yAxisIndex: 3
+      yAxisIndex: 3,
+      markLine: {
+        animation: false,
+        symbol: 'none',
+        label: {
+          show: false
+        },
+        lineStyle: {
+          type: 'dashed',
+          color: 'red',
+          width: '3'
+        },
+        data: [{ xAxis: sessionTime }]
+      }
     },
     {
       name: 'Fake Data5',
@@ -379,7 +351,20 @@ const option = ref({
       },
       data: array5,
       xAxisIndex: 4,
-      yAxisIndex: 4
+      yAxisIndex: 4,
+      markLine: {
+        animation: false,
+        symbol: 'none',
+        label: {
+          show: false
+        },
+        lineStyle: {
+          type: 'dashed',
+          color: 'red',
+          width: '3'
+        },
+        data: [{ xAxis: sessionTime }]
+      }
     },
     {
       name: 'Fake Data5',
@@ -391,7 +376,7 @@ const option = ref({
       },
       data: sample5,
       xAxisIndex: 5,
-      yAxisIndex: 5
+      yAxisIndex: 5,
     }
   ],
 });
@@ -411,5 +396,9 @@ const option = ref({
 <style>
 .chart2 {
   height: 600px;
+}
+
+.slider {
+  width: 100%;
 }
 </style>

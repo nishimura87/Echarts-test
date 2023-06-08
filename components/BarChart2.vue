@@ -8,7 +8,8 @@ import {
   TooltipComponent,
   LegendComponent,
 } from 'echarts/components';
-import VChart, { THEME_KEY } from 'vue-echarts';
+import VChart from 'vue-echarts';
+import { ref } from "vue";
 
 use([
   CanvasRenderer,
@@ -19,7 +20,7 @@ use([
   LabelLayout
 ]);
 
-const option = ({
+const option = ref({
   title: {
     text: 'BarChart2',
     left: 'center',
