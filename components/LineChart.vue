@@ -10,7 +10,7 @@ import {
   DataZoomComponent,
 } from 'echarts/components';
 import VChart from 'vue-echarts';
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import 'echarts/lib/component/markLine';
 
 use([
@@ -56,6 +56,14 @@ for (let i = 0; i < length; i++) {
 }
 
 const sessionTime = 100;
+
+
+const sliderValue = ref(0);
+
+if (typeof document !== 'undefined') {
+  const value: any = document.getElementById('input-range');
+  console.log(value);
+}
 
 const option = ref({
   title: {
@@ -263,7 +271,7 @@ const option = ref({
           color: 'red',
           width: '3'
         },
-        data: [{ xAxis: sessionTime }]
+        data: [{ xAxis: sliderValue }]
       }
     },
     {
@@ -380,14 +388,14 @@ const option = ref({
     }
   ],
 });
-
-
 </script>
 
 <template>
   <div>
     <client-only>
       <v-chart id="chart2" class="chart2" :option="option" autoresize />
+      <input id="input-range" v-model="sliderValue" type="range" min="0" max="200" class="slider" />
+      <input v-model="sliderValue" type="number" class="input" />
     </client-only>
   </div>
 </template>
@@ -400,5 +408,9 @@ const option = ref({
 
 .slider {
   width: 100%;
+}
+
+.example {
+  color: #fff;
 }
 </style>
