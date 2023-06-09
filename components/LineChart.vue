@@ -58,6 +58,8 @@ for (let i = 0; i < length; i++) {
 const sessionTime = 100;
 
 const sliderValue = ref(0);
+const range = document.querySelector("#range");
+
 
 const option = ref({
   title: {
@@ -265,7 +267,7 @@ const option = ref({
           color: 'red',
           width: '3'
         },
-        data: [{ xAxis: sliderValue }]
+        data: [{ xAxis: range }]
       }
     },
     {
@@ -388,7 +390,7 @@ const option = ref({
   <div>
     <client-only>
       <v-chart id="chart2" class="chart2" :option="option" autoresize />
-      <input id="input-range" v-model="sliderValue" type="range" min="0" max="200" class="slider" />
+      <input id="range" v-model="sliderValue" type="range" min="0" max="200" class="slider" />
       <input v-model="sliderValue" type="number" class="input" />
     </client-only>
   </div>
