@@ -10,7 +10,7 @@ import {
   DataZoomComponent,
 } from 'echarts/components';
 import VChart from 'vue-echarts';
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import 'echarts/lib/component/markLine';
 
 use([
@@ -57,13 +57,7 @@ for (let i = 0; i < length; i++) {
 
 const sessionTime = 100;
 
-
 const sliderValue = ref(0);
-
-if (typeof document !== 'undefined') {
-  const value: any = document.getElementById('input-range');
-  console.log(value);
-}
 
 const option = ref({
   title: {
