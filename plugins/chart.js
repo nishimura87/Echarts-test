@@ -11,6 +11,7 @@ import {
   LegendComponent,
   DataZoomComponent
 } from 'echarts/components'
+import 'echarts/lib/component/markLine'
 
 export default defineNuxtPlugin(() => {
   use([

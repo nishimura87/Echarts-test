@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VChart from "vue-echarts";
 import { ref, watch } from "vue";
-import "echarts/lib/component/markLine";
+
 
 const sessionTimes: any = await import('~/assets/json/sessionTime.json');
 const sessionTime: number[] = sessionTimes.default;
