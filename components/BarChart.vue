@@ -32,17 +32,6 @@ const option = ref({
   },
   legend: {
   },
-  visualMap: {
-    top: 50,
-    right: 10,
-    pieces: [
-      {
-        gt: 0,
-        lte: 50,
-        color: '#fff'
-      },
-    ]
-  },
   series: [
     {
       type: 'bar',
