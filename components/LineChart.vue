@@ -104,7 +104,6 @@ const option = ref({
   yAxis: [
     {
       type: "value",
-      data: sampleData1,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -113,7 +112,6 @@ const option = ref({
     },
     {
       type: "value",
-      data: sampleData2,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -122,7 +120,6 @@ const option = ref({
     },
     {
       type: "value",
-      data: sampleData3,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -131,7 +128,6 @@ const option = ref({
     },
     {
       type: "value",
-      data: sampleData4,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -140,7 +136,6 @@ const option = ref({
     },
     {
       type: "value",
-      data: sampleData5,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -149,7 +144,6 @@ const option = ref({
     },
     {
       type: "value",
-      data: sampleData6,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
