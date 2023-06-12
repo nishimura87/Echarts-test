@@ -1,28 +1,9 @@
 <script setup lang="ts">
-import { use } from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { LabelLayout } from 'echarts/features';
-import { BarChart } from 'echarts/charts';
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-} from 'echarts/components';
 import VChart from 'vue-echarts';
 import { ref } from "vue";
 
-use([
-  CanvasRenderer,
-  BarChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  LabelLayout
-]);
-
 const sampleDatas: any = await import('~/assets/json/bar2.json');
 const sampleData: number[] = sampleDatas.default;
-
 
 const option = ref({
   title: {

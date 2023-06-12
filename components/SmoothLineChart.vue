@@ -1,24 +1,6 @@
 <script setup lang="ts">
-import { use } from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { LabelLayout } from 'echarts/features';
-import { LineChart } from 'echarts/charts';
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-} from 'echarts/components';
 import VChart from 'vue-echarts';
 import { ref } from "vue";
-
-use([
-  CanvasRenderer,
-  LineChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  LabelLayout
-]);
 
 const sampleDatas: any = await import('~/assets/json/course.json');
 const sampleData: number[] = sampleDatas.default;
@@ -62,9 +44,7 @@ const option = ref({
 
 <template>
   <div>
-    <client-only>
-      <v-chart id="chart" class="chart3" :option="option" autoresize />
-    </client-only>
+    <v-chart id="chart" class="chart3" :option="option" autoresize />
   </div>
 </template>
 

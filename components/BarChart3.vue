@@ -1,27 +1,6 @@
 <script setup lang="ts">
-import { use } from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { LabelLayout } from 'echarts/features';
-import { BarChart } from 'echarts/charts';
-import {
-  TitleComponent,
-  AriaComponent,
-  TooltipComponent,
-  LegendComponent,
-  DataZoomComponent
-} from 'echarts/components';
 import VChart from 'vue-echarts';
 import { ref } from "vue";
-use([
-  CanvasRenderer,
-  BarChart,
-  AriaComponent,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  DataZoomComponent,
-  LabelLayout
-]);
 
 const sampleDatas: any = await import('~/assets/json/bar3.json');
 const sampleData: number[] = sampleDatas.default;

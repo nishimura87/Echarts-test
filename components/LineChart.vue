@@ -1,27 +1,7 @@
 <script setup lang="ts">
-import { use } from "echarts/core";
-import { CanvasRenderer } from "echarts/renderers";
-import { LabelLayout } from "echarts/features";
-import { LineChart } from "echarts/charts";
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  DataZoomComponent,
-} from "echarts/components";
 import VChart from "vue-echarts";
 import { ref, watch } from "vue";
 import "echarts/lib/component/markLine";
-
-use([
-  CanvasRenderer,
-  LineChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  LabelLayout,
-  DataZoomComponent,
-]);
 
 const sessionTimes: any = await import('~/assets/json/sessionTime.json');
 const sessionTime: number[] = sessionTimes.default;
