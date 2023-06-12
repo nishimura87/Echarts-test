@@ -20,6 +20,9 @@ use([
   LabelLayout
 ]);
 
+const sampleDatas: any = await import('~/assets/json/gauge.json');
+const sampleData: number[] = sampleDatas.default;
+
 const option = ref({
   title: {
     text: 'GaugeChart',
@@ -86,7 +89,7 @@ const option = ref({
       },
       data: [
         {
-          value: 93,
+          value: sampleData[0],
           name: 'SPEED_REAR',
         }
       ],
@@ -147,7 +150,7 @@ const option = ref({
       },
       data: [
         {
-          value: 93,
+          value: sampleData[1],
           name: 'SPEED_REAR',
         }
       ],
@@ -208,7 +211,7 @@ const option = ref({
       },
       data: [
         {
-          value: 93,
+          value: sampleData[2],
           name: 'SPEED_REAR',
         }
       ],
@@ -221,9 +224,7 @@ const option = ref({
 
 <template>
   <div>
-    <client-only>
-      <v-chart class="chart" :option="option" autoresize />
-    </client-only>
+    <v-chart class="chart" :option="option" autoresize />
   </div>
 </template>
 

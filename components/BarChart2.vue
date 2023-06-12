@@ -20,6 +20,10 @@ use([
   LabelLayout
 ]);
 
+const sampleDatas: any = await import('~/assets/json/bar2.json');
+const sampleData: number[] = sampleDatas.default;
+
+
 const option = ref({
   title: {
     text: 'BarChart2',
@@ -54,7 +58,7 @@ const option = ref({
       backgroundStyle: {
         color: 'rgba(180, 180, 180, 0.2)'
       },
-      data: [40, 30, 20],
+      data: sampleData,
     }
   ]
 
@@ -63,9 +67,7 @@ const option = ref({
 
 <template>
   <div>
-    <client-only>
-      <v-chart class="chart" :option="option" autoresize />
-    </client-only>
+    <v-chart class="chart" :option="option" autoresize />
   </div>
 </template>
 

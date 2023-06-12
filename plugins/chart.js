@@ -2,14 +2,17 @@ import { use } from "echarts/core";
 
 import { CanvasRenderer } from "echarts/renderers";
 import { BarChart, LineChart, PieChart } from "echarts/charts";
-import { GridComponent, TooltipComponent } from "echarts/components";
+import { LabelLayout } from 'echarts/features';
+import { GridComponent, TooltipComponent, TitleComponent, } from "echarts/components";
 
 export default defineNuxtPlugin(() => {
   use([
     CanvasRenderer,
+    TitleComponent,
     BarChart,
     LineChart,
     PieChart,
+    LabelLayout,
     GridComponent,
     TooltipComponent,
   ]);

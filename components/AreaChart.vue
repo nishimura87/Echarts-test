@@ -20,6 +20,9 @@ use([
   LabelLayout
 ]);
 
+const sampleDatas: any = await import('~/assets/json/area.json');
+const sampleData: number[] = sampleDatas.default;
+
 const option = ref({
   title: {
     text: 'AreaChart',
@@ -53,7 +56,7 @@ const option = ref({
       backgroundStyle: {
         color: 'rgba(180, 180, 180, 0.2)'
       },
-      data: [0, 30, 80, 10, 10, 50, 30, -20, 0, 10],
+      data: sampleData,
       areaStyle: {}
     }
   ],

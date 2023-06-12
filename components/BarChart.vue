@@ -20,8 +20,8 @@ use([
   LabelLayout
 ]);
 
-const sampleData = [70, 70, 70, 70, 60, 60, 70, -20, -20, -20, 70, 50, 50, 50, 50, 70, 70, 70, 50, 70];
-
+const sampleDatas:any = await import('~/assets/json/bar.json');
+const sampleData:number[] = sampleDatas.default;
 
 const option = ref({
   title: {
@@ -73,9 +73,7 @@ const option = ref({
 
 <template>
   <div>
-    <client-only>
-      <v-chart class="chart" :option="option" autoresize />
-    </client-only>
+    <v-chart class="chart" :option="option" autoresize />
   </div>
 </template>
 

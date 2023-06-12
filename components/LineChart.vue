@@ -23,43 +23,18 @@ use([
   DataZoomComponent,
 ]);
 
-function getRandomInt(max: number) {
-  // ランダムな配列
-  return Math.floor(Math.random() * Math.floor(max));
-}
+const sessionTimes: any = await import('~/assets/json/sessionTime.json');
+const sessionTime: number[] = sessionTimes.default;
+const minrange: number = sessionTime[0];
+const maxrange: number = sessionTime.slice(-1)[0];
 
-const array1: number[] = [];
-const array2: number[] = [];
-const array3: number[] = [];
-const array4: number[] = [];
-const array5: number[] = [];
-const sample5: number[] = [];
-const max = 100;
-const length = 200;
-
-for (let i = 0; i < length; i++) {
-  array1.push(getRandomInt(max));
-}
-for (let i = 0; i < length; i++) {
-  array2.push(getRandomInt(max));
-}
-for (let i = 0; i < length; i++) {
-  array3.push(getRandomInt(max));
-}
-for (let i = 0; i < length; i++) {
-  array4.push(getRandomInt(max));
-}
-for (let i = 0; i < length; i++) {
-  array5.push(getRandomInt(max));
-}
-for (let i = 0; i < length; i++) {
-  sample5.push(getRandomInt(max));
-}
-
-const sessionTime:number[] = [];
-for (let i = 0; i < length; i++) {
-  sessionTime.push(i);
-}
+const sampleDatas: any = await import('~/assets/json/line.json');
+const sampleData1: number[] = sampleDatas.default[0];
+const sampleData2: number[] = sampleDatas.default[1];
+const sampleData3: number[] = sampleDatas.default[2];
+const sampleData4: number[] = sampleDatas.default[3];
+const sampleData5: number[] = sampleDatas.default[4];
+const sampleData6: number[] = sampleDatas.default[5];
 
 const sliderValue = ref<number>(0);
 watch(sliderValue, () => {
@@ -149,7 +124,7 @@ const option = ref({
   yAxis: [
     {
       type: "value",
-      data: array1,
+      data: sampleData1,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -158,7 +133,7 @@ const option = ref({
     },
     {
       type: "value",
-      data: array1,
+      data: sampleData2,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -167,7 +142,7 @@ const option = ref({
     },
     {
       type: "value",
-      data: array1,
+      data: sampleData3,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -176,7 +151,7 @@ const option = ref({
     },
     {
       type: "value",
-      data: array1,
+      data: sampleData4,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -185,7 +160,7 @@ const option = ref({
     },
     {
       type: "value",
-      data: array1,
+      data: sampleData5,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -194,7 +169,7 @@ const option = ref({
     },
     {
       type: "value",
-      data: array1,
+      data: sampleData6,
       axisLine: { show: false },
       axisLabel: { show: false },
       axisTick: { show: false },
@@ -265,7 +240,7 @@ const option = ref({
       itemStyle: {
         color: "red",
       },
-      data: array1,
+      data: sampleData1,
       markLine: {
         animation: false,
         symbol: "none",
@@ -288,7 +263,7 @@ const option = ref({
       itemStyle: {
         color: "green",
       },
-      data: array2,
+      data: sampleData2,
       xAxisIndex: 1,
       yAxisIndex: 1,
       markLine: {
@@ -313,7 +288,7 @@ const option = ref({
       itemStyle: {
         color: "pink",
       },
-      data: array3,
+      data: sampleData3,
       xAxisIndex: 2,
       yAxisIndex: 2,
       markLine: {
@@ -338,7 +313,7 @@ const option = ref({
       itemStyle: {
         color: "yellow",
       },
-      data: array4,
+      data: sampleData4,
       xAxisIndex: 3,
       yAxisIndex: 3,
       markLine: {
@@ -363,7 +338,7 @@ const option = ref({
       itemStyle: {
         color: "rgba(0, 0, 255, 1)",
       },
-      data: array5,
+      data: sampleData5,
       xAxisIndex: 4,
       yAxisIndex: 4,
       markLine: {
@@ -388,7 +363,7 @@ const option = ref({
       itemStyle: {
         color: "rgba(114, 114, 114, 0.7)",
       },
-      data: sample5,
+      data: sampleData6,
       xAxisIndex: 5,
       yAxisIndex: 5,
     },
@@ -400,7 +375,7 @@ const option = ref({
 <template>
   <div>
     <v-chart id="chart2" class="chart2" :option="option" autoresize />
-    <input id="range" v-model.number="sliderValue" type="range" min="0" max="199" class="slider" />
+    <input id="range" v-model.number="sliderValue" type="range" :max="maxrange" :min="minrange" class="slider" />
   </div>
 </template>
 

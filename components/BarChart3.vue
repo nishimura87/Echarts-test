@@ -23,9 +23,12 @@ use([
   LabelLayout
 ]);
 
-const data1 = 80;
-const data2 = 80;
-const data3 = 80;
+const sampleDatas: any = await import('~/assets/json/bar3.json');
+const sampleData: number[] = sampleDatas.default;
+
+const data1 = sampleData[0];
+const data2 = sampleData[1];
+const data3 = sampleData[2];
 const data4 = 100 - data1;
 const data5 = 100 - data2;
 const data6 = 100 - data3;
@@ -97,7 +100,7 @@ const option = ref({
       type: 'bar',
       stack: 'Ad',
       data: [data4,data5,data6],
-      color:['#fff']
+      color: ['#fff'],
     },
   ],
 });
@@ -105,9 +108,7 @@ const option = ref({
 
 <template>
   <div>
-    <client-only>
-      <v-chart class="chart" :option="option" autoresize />
-    </client-only>
+    <v-chart class="chart" :option="option" autoresize />
   </div>
 </template>
 
