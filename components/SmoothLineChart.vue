@@ -43,7 +43,9 @@ watch(sliderValue, (newVal: any) => {
   xPresentValue.value = presentValue.value[0];
   yPresentValue.value = presentValue.value[1];
 
+  // スライバーの返却値表示
   console.log(sliderValue.value)
+  // シークバーの返却値からsessionTimeの近似値を探してインデックス表示(取得しなければいけないデータに対して、2つ前のデータを取得してしまっている)
   console.log(nearestIndex.value)
 });
 
