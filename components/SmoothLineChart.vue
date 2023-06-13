@@ -42,6 +42,9 @@ watch(sliderValue, (newVal: any) => {
   presentValue.value = sampleData[nearestIndex.value];
   xPresentValue.value = presentValue.value[0];
   yPresentValue.value = presentValue.value[1];
+
+  console.log(sliderValue.value)
+  console.log(nearestIndex.value)
 });
 
 const option = ref({
