@@ -2,32 +2,36 @@
 import VChart from 'vue-echarts';
 import { ref, watch } from "vue";
 
+// sessionTimeをjsonから読み込み
 const sessionTimes: any = await import('~/assets/json/sessionTime2.json');
 const sessionTime: number[] = sessionTimes.default;
+
+// sampleData(コース)をjsonから読み込み
+const sampleDatas: any = await import('~/assets/json/course.json');
+const sampleData: number[] = sampleDatas.default;
 
 // jsonで読み込んだsessionTimeの最小値
 const minrange: number = sessionTime[0];
 // jsonで読み込んだsessionTimeの最大値
 const maxrange: number = sessionTime.slice(-1)[0];
 
-const sampleDatas: any = await import('~/assets/json/course.json');
-const sampleData: number[] = sampleDatas.default;
+// markPointの初期位置
+const initialValue:any = sampleData[0]
 
+// シークバーの返却値からsessionTimeの近似値を探してインデックスを取得し、インデックスが一致するsanpleDataを取得する
 const sliderValue = ref<number>(0);
-watch(sliderValue, () => {
-  
-});
+const nearestIndex = ref<any>();
+const presentValue = ref<any>(0);
+const xPresentValue = ref<number>(initialValue[0]);
+const yPresentValue = ref<number>(initialValue[1]);
 
-// シークバーの返却値からsessionTimeの近似値を探してインデックスを取得
-const nearestIndex = ref<number>(0);
-
-function calculateNearestValue(): void {
+watch(sliderValue, (newVal:any) => {
   let minDiff = Infinity;
-  let resultIndex: any = null;
+  let resultIndex: number | null = null;
 
   for (let i = 0; i < sessionTime.length; i++) {
     const value = sessionTime[i];
-    const diff = Math.abs(value - sliderValue.value);
+    const diff = Math.abs(value - newVal);
     if (diff < minDiff) {
       minDiff = diff;
       resultIndex = i;
@@ -35,11 +39,10 @@ function calculateNearestValue(): void {
   }
 
   nearestIndex.value = resultIndex;
-}
-
-calculateNearestValue();
-
-const presentValue:any = sampleData[nearestIndex.value];
+  presentValue.value = sampleData[nearestIndex.value];
+  xPresentValue.value = presentValue.value[0];
+  yPresentValue.value = presentValue.value[1];
+});
 
 const option = ref({
   title: {
@@ -78,13 +81,14 @@ const option = ref({
           color:'red'
         },
         data: [{
-          xAxis: presentValue[0],
-          yAxis: presentValue[1]
+          xAxis: xPresentValue,
+          yAxis: yPresentValue
         }],
-        symbolSize: 20
+        symbolSize: 20,
       }
     }
   ],
+  
 });
 </script>
 
